@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<title>JODIS | Competitive Programming Example Cases</title>
+		<script type="text/javascript">
+			function imghvr() {
+				document.getElementById("toTop").src = "top-hover.png";
+			}
+			function imgor() {
+				document.getElementById("toTop").src = "top.png";
+			}
+		</script>
+	</head>
+
+	<body>
+<!--		<div id="top"><h1>Competitive Programing</h1>
+			<hr />
+			<h2>Example Cases</h2>
+		</div>
+-->		<div align="center" id="top">
+				<br />
+				<h1>Competitive Programing</h1><hr width="55%" />
+				<h2>Example Cases</h2>
+				<br />
+				<!--<img src="title.png" alt="Competitive Programming's Example Case" width=60% />-->
+			
+		</div>
+		<div id="navbar" align="center"><b>
+			<a class="block" href="#case1">Case 1</a>
+			<a class="block" href="#case2">Case 2</a>
+			<a class="block" href="#case3">Case 3</a>
+			<a class="block" href="#case4">Case 4</a>
+			<a class="block" href="#case5">Case 5</a>
+			<a class="block" href="#case6">Case 6</a>
+			<a class="block" href="#case7">Case 7</a>
+		</b></div>
+		<br />
+
+		<div id="float">
+			<a href="#top"><img id="toTop" src="top.png" onmouseover="imghvr()" onmouseout="imgor()"/></a>
+		</div>
+		
+		<h3 id="case1">Case 1</h3>
+		<div id="case">
+			<p>Pak Jonae, Dosen Matakuliah ASD 4, sedang kerepotan memberikan nilai dari hasil UTS para mahasiswanya yang sangat banyak.</p>
+
+			<p>Pada ujian tersebut terdapat banyak soal. Untuk setiap soal hanya bisa bernilai 10 jika benar dijawab dan bernilai 0 jika salah dijawab.</p>
+
+			<p>Jika sebuah soal salah dijawab (bernilai 0), tentunya soal tersebut akan diberi skor 0. Namun jika sebuah soal dijawab benar (bernilai 10), soal tersebut akan diberikan skor 1 + jumlah soal sebelumnya yang berdempetan dengannya dan bernilai 10. Dengan kata lain, jika sebuah soal ke-i (i >= 1) bernilai 10, soal tersebut akan diberikan skor 1 + (i - j) dimana soal ke-j, j+1, j+2, ..., i-2, i-1 semuanya bernilai 10 (j < i, j merupakan bilangan bulat terkecil yang memenuhi).</p>
+
+			<p>Bantulah pak Jonae untuk menghitung skor UTS mahasiswanya agar ASD 4 kalian bisa dapet A juga!</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Diberikan Sebuah baris yang berisi String S dengan panjang kurang dari 1000, yang hanya berisi gabungan nilai "10" dan "0".
+
+			<h4>PETUNJUK KELUARAN</h4>
+			Sebuah baris yang berisikan skor mahasiswa tersebut.
+			<br /><br />
+
+			<b>CONTOH INPUT 1</b>: 100010100<br />
+			<b>CONTOH OUTPUT 1</b>: 4<br /><br/>
+			<b>CONTOH INPUT 2</b>: 10101001010<br />
+			<b>CONTOH OUTPUT 1</b>: 4
+			<h4>KETERANGAN</h4>
+			Pada sample input 1 :<br />
+
+			skornya = 1 + 0 + 0 + 1 + 2 + 0 = 4<br /><br />
+
+			Sedangkan pada sample case 2,<br />
+
+			skornya = 1 + 2 + 3 + 0 + 1 + 2 = 9
+		</div>
+		
+
+		<h3 id="case2">Case 2</h3>
+		<div id="case">
+			<p>Mr. R menerima proyek dari PLN. Pihak PLN ingin memasang gardu listrik di daerah tertentu. Di daerah tersebut terdapat banyak desa yang ingin dipasangi gardu listrik. Karena Mr. R sangat sibuk mengajar, dia meminta bantuan anda untuk menyelesaikan proyek ini.</p>
+
+			<p>PLN memberikan sebuah peta yang berisi data jarak antara desa yang ada. Anda diminta untuk mencari jarak terpendek antara desa yang ada, agar biaya penyambungan listrik dapat dihemat.</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Diberikan dua buang angka n,m ( 2 <= n <= 100| (n - 1) <= m <= ((n - 1)*n)/2). n merupakan banyaknya desa yang ada (dimulai dari index 1) dan m banyakanya jalan yang ada pada daerah tersebut. m baris berikutnya berisi a,b,c yang berarti ada jalan dari desa a ke desa b yang panjang jalannya adalah c ( 1 <= c <= 1000).
+			
+			<h4>PETUNJUK KELUARAN</h4>
+			Matrix berukuran n * n yang berupa adjajency matrix. (matrix yang memberikan info jarak terpendek antar setiap desa)
+			<br /><br />
+
+			<b>CONTOH INPUT</b>: <br />
+			3 3<br />
+			1 2 9<br />
+			1 3 1<br />
+			3 2 1<br />
+			<b>CONTOH OUTPUT</b>: <br />
+			0 2 1<br />
+			2 0 1<br />
+			1 1 0
+			<br /><br />
+			<h4>KETERANGAN</h4>
+			All Pair Shortest Path<br /><br />
+			<h4>CATATAN</h4>
+
+			Perhatikan contoh soal di atas,<br />
+			Ada jalan dari desa 1 ke desa 2 dengan panjang 9<br />
+			Ada jalan dari desa 1 ke desa 3 dengan panjang 1<br />
+			Ada jalan dari desa 3 ke desa 2 dengan panjang 1<br />
+			Maka jarak terpendek dari<br />
+			<ul>
+				<li>Desa 1 ke 2 adalah 2 (melalui desa 3)</li>
+				<li>Desa 1 ke 3 adalah 1</li>
+				<li>Desa 2 ke 3 adalah 1</li>
+			</ul>
+			Penjelasan format jawaban<br />
+				0 2 1<br />
+				2 0 1<br />
+				1 1 0<br /><br />
+			Desa 1 ke 1 terpendek 0<br />
+			Desa 1 ke 2 terpendek 2<br />
+			Desa 1 ke 3 terpendek 1<br />
+			Desa 2 ke 1 terpendek 2<br />
+			Desa 2 ke 2 terpendek 0<br />
+			Desa 2 ke 3 terpendek 1<br />
+			Desa 3 ke 1 terpendek 1<br />
+			Desa 3 ke 2 terpendek 1<br />
+			Desa 3 ke 3 terpendek 0<br /><br />
+
+			Kalau ada jalan dari desa 1 ke desa 2 sepanjang 5, PASTI jalan dari desa 2 ke desa 1 juga 5<br /><br />
+
+			Dipastikan ada jalan dari sebuah desa menuju desa yang lainnya<br />
+		</div>
+
+
+		<h3 id="case3">Case 3</h3>
+		<div id="case">
+			<p>Pak Caleb memberikan N buah batu kepada Budi. Batu tersebut disusun 1 baris. Batu-batu tersebut berwarna hitam dan putih. Pak Caleb menantang Budi untuk mengubah N buah batu yang diberikan menjadi putih seluruhnya, dengan cara:</p>
+
+			<p>A. Batu hitam dapat ditukar dengan 1 buah batu Putih dan 1 buah batu Hitam.</p>
+
+			<p>B. Jika Budi menukarkan Batu Hitamnya, tentu saja akan mempengaruhi batu setelahnya.
+
+			<ol>
+			<li>Jika batu setelahnya adalah batu Hitam, maka batu tersebut di ganti dengan batu putih.<br />
+
+			misal: HH,batu pertama akan ditukar. Menjadi P(HH), maka menjadi PP.</li>
+
+			<li> Jika batu setelahnya adalah batu Putih, maka batu tersebut di ganti dengan batu hitam.<br/>
+
+			misal: HP, batu pertama ditukar. Menjadi P(HP), maka menjadi PH.</li>
+			</ol>
+			</p>
+
+			<p>Hitunglah langkah minimum yang dapat Budi lakukan, sehingga seluruh batu berubah menjadi batu Putih.(Hanya sejumlah Batu pada input yang diberikan)
+			</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Diberikan sebuah string S(1<=Panjang S<=106) yang berisi character 'H' dan 'P' yang berarti Hitam(H) dan Putih(P).
+
+			<h4>PETUNJUK KELUARAN</h4>
+			Ouputkan langkah minimum yang dibutuhkan agar merubah semua batu yang diberikan menjadi warna Putih.
+			<br /><br />
+
+			<b>CONTOH INPUT 1</b>: HP<br />
+			<b>CONTOH OUTPUT 1</b>: 2<br /><br/>
+			<b>CONTOH INPUT 2</b>: HHH<br />
+			<b>CONTOH OUTPUT 1</b>: 2
+
+			<h4>KETERANGAN</h4>
+			Pada TESTCASE 1, dibutuhkan 2 langkah.<br/>
+			<b>Langkah 1</b>: Ubah batu 1 menjadi warna P dan H. Karena batu setelahnya adalah warna Putih maka akan berubah menjadi: PH.<br/> 
+			<b>Langkah 2</b>: Mengubah batu ke 2 menjadi warna P dan H, maka akan berubah menjadi : PPH.<br/> 
+			Karena batu inputan hanya 2, maka batu ketiga yang dihasilkan tidak dianggap.
+			<br/><br/>
+			Testcase 1<br/>
+
+			Pada TESTCASE 2, dibutuhkan 2 langkah. 
+			Langkah 1: Ubah batu 1 menjadi warna P dan H. Karena batu setelahnya adalah warna Hitam maka akan berubah menjadi: PPH. 
+			Langkah 2: Mengubah batu ke 3 menjadi warna P dan H, maka akan berubah menjadi : PPPH. <br/>
+			Karena batu inputan hanya 3, maka batu keempat yang dihasilkan tidak dianggap.
+			<br/><br/>
+			Testcase 2<br/>
+
+			Bilangan GG merupakan bilangan yang digit-digitnya hanya terdiri dari 2, 3, 5 dan 7. Sebagai contoh 3, 35 dan 257 merupakan bilangan GG. Sedangkan 1253, 70, dan 596 bukan merupakan bilangan GG.<br/>
+
+			Jika kumpulan bilangan GG diurutkan dari kecil ke besar, akan terbentuk barisan 2, 3, 5, 7, 22, 23, 25, dst. Pada soal ini, Anda akan diberikan sebuah bilangan bulat N. Tentukan bilangan GG urutan ke-N pada barisan bilangan GG yang telah terurut dari kecil ke besar!<br/>
+
+			Dijamin N tidak akan melebihi 100000 dan bilangan GG urutan ke-100000 adalah 227233257<br />
+		</div>
+
+
+		<h3 id="case4">Case 4</h3>
+		<div id="case">
+			<p>Bilangan GG merupakan bilangan yang digit-digitnya hanya terdiri dari 2, 3, 5 dan 7. Sebagai contoh 3, 35 dan 257 merupakan bilangan GG. Sedangkan 1253, 70, dan 596 bukan merupakan bilangan GG.</p>
+
+			<p>Jika kumpulan bilangan GG diurutkan dari kecil ke besar, akan terbentuk barisan 2, 3, 5, 7, 22, 23, 25, dst. Pada soal ini, Anda akan diberikan sebuah bilangan bulat N. Tentukan bilangan GG urutan ke-N pada barisan bilangan GG yang telah terurut dari kecil ke besar!</p>
+
+			<p>Dijamin N tidak akan melebihi 100000 dan bilangan GG urutan ke-100000 adalah 227233257</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Baris pertama berisi sebuah bilangan bulat N (1 <= N <= 100000).
+
+			<h4>PETUNJUK KELUARAN</h4>
+			Sebuah baris yang berisi sebuah bilangan bulat yang merupakan bilangan GG urutan ke-N pada barisan bilangan GG yang telah terurut dari kecil ke besar.
+			<br /><br />
+
+			<b>CONTOH INPUT 1</b>: 3<br />
+			<b>CONTOH OUTPUT 1</b>: 5<br /><br/>
+			<b>CONTOH INPUT 2</b>: 10<br />
+			<b>CONTOH OUTPUT 1</b>: 33
+		</div>
+
+
+		<h3 id="case5">Case 5</h3>
+		<div id="case">
+			<p>Diberikan sebuah bilangan bulat non-negatif N, hitunglah digit satuan dari 2N!</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Baris pertama berisi sebuah bilangan bulat non-negatif N. N dijamin muat pada tipe data int (bagi pengguna C/C++) atau longint (bagi pengguna Pascal).
+
+			<h4>PETUNJUK KELUARAN</h4>
+			Sebuah bilangan bulat yang merupakan digit satuan dari 2N
+			<br /><br />
+
+			<b>CONTOH INPUT 1</b>: 2<br />
+			<b>CONTOH OUTPUT 1</b>: 4<br /><br/>
+			<b>CONTOH INPUT 2</b>: 7<br />
+			<b>CONTOH OUTPUT 1</b>: 8
+			<h4>KETERANGAN</h4>
+			Pada contoh kasus pertama, 2N = 22 = 4. Maka digit satuannya adalah 4.<br /><br />
+
+			Pada contoh kasus kedua, 2N = 27 = 128. Maka digit satuannya adalah 8.
+		</div>
+
+
+		<h3 id="case6">Case 6</h3>
+		<div id="case">
+			<p>Pada suatu hari, Ipang yang sedang bersantai-santai di sekretariat OmahTI didatangi oleh Widardi yang membawa laporan biaya perjalanan makan bersama divisi Competitive Programming OmahTI. Di dalam laporan terdapat biaya transportasi, biaya konsumsi, dan biaya lain-lain. Tetapi masalah pada soal ini tidak menyangkut laporan Widardi sama sekali melainkan membantu Ipang menyapa Widardi, buatlah program yang dapat membantu Ipang menyapa Widardi!</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Input N (1 <= N <= 100) jumlah berapa kali Ipang menyapa Widardi.
+
+			<h4>PETUNJUK KELUARAN</h4>
+			Untuk N baris outputkan “Hello Widardi!”
+			<br /><br />
+
+			<b>CONTOH INPUT</b>: 10<br />
+			<b>CONTOH OUTPUT</b>: <br />
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!<br/>
+			Hello Widardi!
+		</div>
+
+
+		<h3 id="case7">Case 7</h3>
+		<div id="case">
+			<p>Pada suatu hari dek Widardi pergi ke sekolah. Disana dia bertemu dengan dek Aji yang sedang main DOTA 2. Mereka berdua biasa bermain dan belajar bersama. Mereka juga teman satu kelas dan satu bangku. Sepulang sekolah dek Aji ingin bermain di rumah dek Widardi. Bila diketahui jarak rumah Widardi ke sekolah A Km, jarak rumah Aji ke sekolah B Km. Jika dek Aji bermain ke rumah dek Widardi, berapakah jarak yang telah ditempuh Aji hari ini?</p>
+		</div>
+		<div id="example">
+			<h4>PETUNJUK MASUKAN</h4>
+			Input pertama yaitu A (1 <= A <= 10000) dan input kedua yaitu B (1 <= B <= 10000) yang dipisahkan oleh sebuah spasi.
+
+			<h4>PETUNJUK KELUARAN</h4>
+			Keluarkan jarak yang telah ditempuh Aji hari ini!
+			<br /><br />
+
+			<b>CONTOH INPUT 1</b>: 5 9<br />
+			<b>CONTOH OUTPUT 1</b>: 14<br /><br/>
+			<b>CONTOH INPUT 2</b>: 7 20<br />
+			<b>CONTOH OUTPUT 1</b>: 27
+		</div>
+
+
+
+		<br /><br/>
+		<hr />
+		<div id="footer" align="center">Designed by<br /><div class="sign">Candra Dewi Jodistiara</div>2016</div>
+	</body>
+</html>

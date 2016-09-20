@@ -13,6 +13,7 @@
 			}
 		</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="words.js"></script>
 		<script>
 		$(document).ready(function(){
 		  $("a").on('click', function(event) {
@@ -293,7 +294,28 @@
 			<b>CONTOH INPUT 2</b>: 7 20<br />
 			<b>CONTOH OUTPUT 1</b>: 27
 		</div>
+		<h3 id="tugas03">GAME!!</h3>
+		<div id="case" align="center">
+			<form name="form1" onsubmit="return insert()" method="get">
+  				Masukkan input angka: <br /> 
+  				<input type="text" name="deret" width="60px" /><br />
+ 	 			<input type="submit" value="Submit">   
+ 	 			<button onclick="show()">Tunjukan</button>
+			</form>
+			<br />
+			<hr />
+			<br />
+			<form name="form2">
+				Masukkan input kata: <br />
+				<textarea id="word" name="inputString" cols="50" rows="4">Masukkan Kata</textarea>
+				<br />
+				<input type="button" name="Convert" value="Menghitung Angka" onclick="WordCount()" /> 
+			</form>
+		</div>
 
+		<br /><br/>
+		<hr />
+		<div id="footer" align="center">Designed by<br /><div class="sign">Candra Dewi Jodistiara</div>2016</div>
 
 
 		<br /><br/>
